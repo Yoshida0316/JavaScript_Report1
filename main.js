@@ -25,9 +25,9 @@ function updateTimeText(){
     mb = ('0' + mb).slice(-1);
     mc = ('0' + mc).slice(-1);
     s = ('0' + s).slice(-1);
-   
-    timer.textContent = ma+':'+mb+':'+mc+':'+s;
+    ms = ('0' + ms).slice(-3);
   
+  timer.textContent = ma+':'+mb+':'+mc+':'+s+'.'+ms;
 }
 
 startbtn.addEventListener("click",function(){
@@ -56,7 +56,8 @@ stopbtn.addEventListener("click",function(){
 resetbtn.addEventListener("click",function(){
   elapsedTime = 0 ;
   holdTime = 0;
-  updateTimeText();
+  document.getElementById("timer").innerHTML = "0:0:0:0.000"
+  // updateTimeText();
   
   startbtn.disabled = false;
   stopbtn.disabled = true;
